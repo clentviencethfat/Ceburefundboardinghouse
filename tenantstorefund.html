@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tenants to Refund | Refund Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+  <header class="topbar">
+    <div>
+      <small>BOARDING HOUSE ADMINISTRATION</small>
+      <h1>Tenants to Refund</h1>
+      <p>Monitor pending tenant refunds.</p>
+    </div>
+    <div id="todayDate"></div>
+  </header>
+
+  <nav class="nav-tabs">
+    <a class="nav-btn" href="index.html">Home</a>
+    <a class="nav-btn" href="dashboard.html">Dashboard</a>
+    <a class="nav-btn" href="editrefund.html">Edit Refund</a>
+    <a class="nav-btn active" href="tenantstorefund.html">Tenants to Refund</a>
+    <a class="nav-btn" href="refundedhistory.html">Refunded History</a>
+    <a class="nav-btn" href="allrecords.html">All Records</a>
+  </nav>
+
+  <section class="stats-grid">
+    <div class="stat-card">
+      <span>Pending Tenants</span>
+      <strong id="pendingCount">0</strong>
+    </div>
+    <div class="stat-card">
+      <span>Pending Refund Amount</span>
+      <strong id="pendingAmount">₱0.00</strong>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-head">
+      <div>
+        <h2>Pending Refund List</h2>
+        <p>Mark a refund as completed after payment.</p>
+      </div>
+      <a class="btn primary" href="editrefund.html">+ Add Refund</a>
+    </div>
+
+    <label>Search Tenant
+      <input id="pendingSearch" placeholder="Search name, room, or boarding house">
+    </label>
+
+    <div class="table-wrap" style="margin-top:15px">
+      <table>
+        <thead>
+          <tr>
+            <th>Tenant</th>
+            <th>Boarding House</th>
+            <th>Room</th>
+            <th>Checkout</th>
+            <th>Refund</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="pendingRecords"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>Boarding House Refund Manager</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Refund | Refund Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+
+  <header class="topbar">
+    <div>
+      <small>BOARDING HOUSE ADMINISTRATION</small>
+      <h1>Edit Refund</h1>
+      <p>Manage tenant information, deductions, and refund payments.</p>
+    </div>
+    <div id="todayDate"></div>
+  </header>
+
+  <nav class="nav-tabs">
+    <a class="nav-btn" href="index.html">Home</a>
+    <a class="nav-btn" href="dashboard.html">Dashboard</a>
+    <a class="nav-btn active" href="editrefund.html">Edit Refund</a>
+    <a class="nav-btn" href="tenantstorefund.html">Tenants to Refund</a>
+    <a class="nav-btn" href="refundedhistory.html">Refunded History</a>
+    <a class="nav-btn" href="allrecords.html">All Records</a>
+  </nav>
+
+  <form id="refundForm">
+    <input type="hidden" id="recordId">
+
+    <!-- TENANT INFORMATION -->
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <span class="refund-eyebrow">SECTION 01</span>
+          <h2>Tenant Information</h2>
+          <p>Enter the tenant's details and checkout information.</p>
+        </div>
+        <div class="refund-icon">01</div>
+      </div>
+
+      <div class="grid">
+        <label>Complete Name
+          <input id="tenantName" required
+            placeholder="Enter tenant's full name">
+        </label>
+
+        <label>Boarding House
+          <input id="boardingHouse" required
+            placeholder="e.g. Fely Homes">
+        </label>
+
+        <label>Room Number
+          <input id="roomNumber" required
+            placeholder="e.g. 127">
+        </label>
+
+        <label>Room Type
+          <select id="roomType">
+            <option>Good for 1</option>
+            <option selected>Good for 2</option>
+            <option>Good for 3</option>
+            <option>Good for 4</option>
+            <option>Bedspace</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <label>Checkout Date
+          <input type="date" id="checkoutDate" required>
+        </label>
+
+        <label>Checkout Time
+          <input type="time" id="checkoutTime">
+        </label>
+      </div>
+    </section>
+
+    <!-- SECURITY DEPOSIT AND DEDUCTIONS -->
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <span class="refund-eyebrow">SECTION 02</span>
+          <h2>Security Deposit and Deductions</h2>
+          <p>Enter the deposit and every deduction in pesos.</p>
+        </div>
+
+        <button type="button" class="btn" id="addDeduction">
+          + Add Deduction
+        </button>
+      </div>
+
+      <label>Security Deposit (₱)
+        <input type="number" id="deposit"
+          min="0" step="0.01" value="0" required>
+      </label>
+
+      <div class="table-wrap" style="margin-top:15px">
+        <table>
+          <thead>
+            <tr>
+              <th>Deduction Description</th>
+              <th>Amount (₱)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="deductionRows"></tbody>
+        </table>
+      </div>
+
+      <div class="two-col refund-summary-layout" style="margin-top:20px">
+        <div class="panel refund-total-panel">
+          <h3>Refund Summary</h3>
+
+          <div class="sum">
+            <span>Security Deposit</span>
+            <b id="showDeposit">₱0.00</b>
+          </div>
+
+          <div class="sum">
+            <span>Total Deductions</span>
+            <b id="showDeductions">₱0.00</b>
+          </div>
+
+          <div class="sum final">
+            <span>Final Refund</span>
+            <b id="finalRefund">₱0.00</b>
+          </div>
+        </div>
+
+        <div class="refund-status-panel">
+          <label>Refund Status
+            <select id="refundStatus">
+              <option value="Pending">Pending</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </label>
+
+          <label style="margin-top:14px">Notes
+            <textarea id="notes" rows="4"
+              placeholder="Optional notes about the refund"></textarea>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODE OF REFUND -->
+    <section class="panel refund-method-panel">
+      <div class="section-head refund-method-heading">
+        <div>
+          <span class="refund-eyebrow">SECTION 03 · PAYMENT DETAILS</span>
+          <h2>Mode of Refund</h2>
+          <p>Select the payment method and provide the recipient's details.</p>
+        </div>
+        <div class="refund-icon">₱</div>
+      </div>
+
+      <div class="refund-method-grid">
+
+        <label>Mode of Refund
+          <select id="refundMethod" name="refundMethod">
+            <option value="">Select refund method</option>
+            <option value="GCash">GCash</option>
+            <option value="Bank Transfer">Bank Transfer</option>
+            <option value="Cash">Cash</option>
+            <option value="Maya">Maya</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+
+        <label>Recipient Name
+          <input type="text" id="recipientName" name="recipientName"
+            placeholder="Full name of the person receiving the refund">
+        </label>
+
+        <label>Account Name
+          <input type="text" id="refundAccountName" name="refundAccountName"
+            placeholder="Name registered to the account">
+        </label>
+
+        <label>Account Number
+          <input type="text" id="refundAccountNumber" name="refundAccountNumber"
+            placeholder="GCash number or bank account number"
+            autocomplete="off">
+        </label>
+
+        <label class="refund-full-width">Bank / Wallet Provider
+          <input type="text" id="refundProvider" name="refundProvider"
+            placeholder="e.g. GCash, BPI, BDO, Metrobank, Maya">
+        </label>
+
+        <label class="refund-full-width">Reference Number / Transaction Details
+          <input type="text" id="refundReference" name="refundReference"
+            placeholder="Enter transaction reference number, if available">
+        </label>
+      </div>
+
+      <div class="refund-reminder">
+        <span class="refund-reminder-icon"></span>
+        <p>
+          Double-check the recipient's name and account details before
+          transferring the refund. For cash refunds, account details may
+          be left blank. Enter a transaction reference when available.
+        </p>
+      </div>
+    </section>
+
+    <!-- ACTION BUTTONS -->
+    <section class="panel refund-actions-panel">
+      <div class="section-head">
+        <div>
+          <h2>Save Refund Record</h2>
+          <p>Review the information before saving or printing.</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn primary">
+          Save Refund
+        </button>
+
+        <button type="button" class="btn" id="clearForm">
+          Clear Form
+        </button>
+
+        <button type="button" class="btn" id="printCurrent">
+          Print Receipt
+        </button>
+      </div>
+
+      <p id="message" role="status"></p>
+    </section>
+  </form>
+
+  <section id="printReceipt" class="receipt"></section>
+
+  <footer>Boarding House Refund Manager</footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Refund Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+
+  <header class="topbar">
+    <div>
+      <small>BOARDING HOUSE ADMINISTRATION</small>
+      <h1>Refund Manager</h1>
+      <p>Manage tenant refunds and records in one place.</p>
+    </div>
+    <div id="todayDate"></div>
+  </header>
+
+  <nav class="nav-tabs">
+    <a class="nav-btn active" href="index.html">Home</a>
+    <a class="nav-btn" href="dashboard.html">Dashboard</a>
+    <a class="nav-btn" href="editrefund.html">Edit Refund</a>
+    <a class="nav-btn" href="tenantstorefund.html">Tenants to Refund</a>
+    <a class="nav-btn" href="refundedhistory.html">Refunded History</a>
+    <a class="nav-btn" href="allrecords.html">All Records</a>
+  </nav>
+
+  <section class="panel">
+    <h2>Welcome to Refund Manager</h2>
+    <p>Manage security deposits, deductions, and tenant refunds.</p>
+    <div class="actions">
+      <a class="btn primary" href="editrefund.html">+ Create Refund</a>
+      <a class="btn" href="allrecords.html">View All Records</a>
+    </div>
+  </section>
+
+  <section class="stats-grid">
+    <div class="stat-card">
+      <span>Total Records</span>
+      <strong id="homeTotal">0</strong>
+    </div>
+    <div class="stat-card">
+      <span>Pending Refunds</span>
+      <strong id="homePending">0</strong>
+    </div>
+    <div class="stat-card">
+      <span>Completed Refunds</span>
+      <strong id="homeCompleted">0</strong>
+    </div>
+    <div class="stat-card">
+      <span>Total Refund Amount</span>
+      <strong id="homeAmount">₱0.00</strong>
+    </div>
+  </section>
+
+  <section class="grid">
+    <a class="panel" href="dashboard.html">
+      <h2>Dashboard</h2>
+      <p>View refund statistics and summaries.</p>
+    </a>
+    <a class="panel" href="editrefund.html">
+      <h2>Edit Refund</h2>
+      <p>Create, calculate, or update a refund.</p>
+    </a>
+    <a class="panel" href="tenantstorefund.html">
+      <h2>Tenants to Refund</h2>
+      <p>Review refunds that are still pending.</p>
+    </a>
+    <a class="panel" href="refundedhistory.html">
+      <h2>Refunded History</h2>
+      <p>Review completed refund transactions.</p>
+    </a>
+    <a class="panel" href="allrecords.html">
+      <h2>All Records</h2>
+      <p>Search and manage all saved records.</p>
+    </a>
+  </section>
+
+  <footer>Boarding House Refund Manager</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

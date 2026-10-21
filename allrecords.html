@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Records | Refund Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+  <header class="topbar">
+    <div>
+      <small>BOARDING HOUSE ADMINISTRATION</small>
+      <h1>All Records</h1>
+      <p>Search and manage every saved refund.</p>
+    </div>
+    <div id="todayDate"></div>
+  </header>
+
+  <nav class="nav-tabs">
+    <a class="nav-btn" href="index.html">Home</a>
+    <a class="nav-btn" href="dashboard.html">Dashboard</a>
+    <a class="nav-btn" href="editrefund.html">Edit Refund</a>
+    <a class="nav-btn" href="tenantstorefund.html">Tenants to Refund</a>
+    <a class="nav-btn" href="refundedhistory.html">Refunded History</a>
+    <a class="nav-btn active" href="allrecords.html">All Records</a>
+  </nav>
+
+  <section class="panel">
+    <div class="section-head">
+      <div>
+        <h2>Refund Database</h2>
+        <p>Saved records are shared across all pages in this browser.</p>
+      </div>
+      <a class="btn primary" href="editrefund.html">+ New Refund</a>
+    </div>
+
+    <div class="filters">
+      <label>Search
+        <input id="allSearch" placeholder="Tenant, room, or boarding house">
+      </label>
+      <label>Filter Status
+        <select id="statusFilter">
+          <option value="All">All Statuses</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </label>
+      <label>Sort By
+        <select id="sortFilter">
+          <option value="newest">Newest Checkout</option>
+          <option value="oldest">Oldest Checkout</option>
+          <option value="highest">Highest Refund</option>
+          <option value="lowest">Lowest Refund</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="table-wrap">
+      <table class="records">
+        <thead>
+          <tr>
+            <th>Tenant</th>
+            <th>Boarding House</th>
+            <th>Room</th>
+            <th>Checkout Date</th>
+            <th>Deposit</th>
+            <th>Deductions</th>
+            <th>Final Refund</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="allRecords"></tbody>
+      </table>
+    </div>
+    <p id="recordCount" class="muted"></p>
+  </section>
+
+  <footer>Boarding House Refund Manager</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

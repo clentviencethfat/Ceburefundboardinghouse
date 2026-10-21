@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Refunded History | Refund Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+  <header class="topbar">
+    <div>
+      <small>BOARDING HOUSE ADMINISTRATION</small>
+      <h1>Refunded History</h1>
+      <p>View completed refund transactions.</p>
+    </div>
+    <div id="todayDate"></div>
+  </header>
+
+  <nav class="nav-tabs">
+    <a class="nav-btn" href="index.html">Home</a>
+    <a class="nav-btn" href="dashboard.html">Dashboard</a>
+    <a class="nav-btn" href="editrefund.html">Edit Refund</a>
+    <a class="nav-btn" href="tenantstorefund.html">Tenants to Refund</a>
+    <a class="nav-btn active" href="refundedhistory.html">Refunded History</a>
+    <a class="nav-btn" href="allrecords.html">All Records</a>
+  </nav>
+
+  <section class="panel">
+    <h2>Completed Transactions</h2>
+    <label>Search History
+      <input id="historySearch" placeholder="Search tenant, room, or boarding house">
+    </label>
+
+    <div class="table-wrap" style="margin-top:15px">
+      <table>
+        <thead>
+          <tr>
+            <th>Tenant</th>
+            <th>Boarding House</th>
+            <th>Room</th>
+            <th>Checkout Date</th>
+            <th>Refund Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="historyRecords"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>Boarding House Refund Manager</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | Refund Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+
+  <header class="topbar">
+    <div>
+      <small>BOARDING HOUSE ADMINISTRATION</small>
+      <h1>Dashboard</h1>
+      <p>Refund overview and financial summary.</p>
+    </div>
+    <div id="todayDate"></div>
+  </header>
+
+  <nav class="nav-tabs">
+    <a class="nav-btn" href="index.html">Home</a>
+    <a class="nav-btn active" href="dashboard.html">Dashboard</a>
+    <a class="nav-btn" href="editrefund.html">Edit Refund</a>
+    <a class="nav-btn" href="tenantstorefund.html">Tenants to Refund</a>
+    <a class="nav-btn" href="refundedhistory.html">Refunded History</a>
+    <a class="nav-btn" href="allrecords.html">All Records</a>
+  </nav>
+
+  <section class="stats-grid">
+    <div class="stat-card">
+      <span>Total Records</span>
+      <strong id="dashTotal">0</strong>
+    </div>
+    <div class="stat-card">
+      <span>Pending Refunds</span>
+      <strong id="dashPending">0</strong>
+    </div>
+    <div class="stat-card">
+      <span>Completed Refunds</span>
+      <strong id="dashCompleted">0</strong>
+    </div>
+    <div class="stat-card">
+      <span>Total Refund Amount</span>
+      <strong id="dashAmount">₱0.00</strong>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-head">
+      <div>
+        <h2>Recent Refund Records</h2>
+        <p>The latest five saved refund records.</p>
+      </div>
+      <a class="btn primary" href="editrefund.html">+ New Refund</a>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Tenant</th>
+            <th>Room</th>
+            <th>Checkout Date</th>
+            <th>Refund</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="recentRecords"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>Boarding House Refund Manager</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
